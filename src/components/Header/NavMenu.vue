@@ -1,7 +1,7 @@
 <template>
  <nav class="nav">
 	<div class="nav__logo">
-        <a href="#">High<em>way</em></a>
+        <a href="#">Logo</a>
     </div>
 	<div class="nav__menu">
 		<MobileMenu />
@@ -144,5 +144,10 @@ $background_color_1: transparent;
 
 .nav__logo {
 	z-index: 99999;
+}
+@media screen and (min-width: 1024px) {
+.nav__hamburger {
+	display: none;
+}	
 }
 </style>

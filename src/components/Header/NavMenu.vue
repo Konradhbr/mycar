@@ -1,0 +1,148 @@
+<template>
+ <nav class="nav">
+	<div class="nav__logo">
+        <a href="#">High<em>way</em></a>
+    </div>
+	<div class="nav__menu">
+		<MobileMenu />
+	</div>
+    <div class="nav__hamburger" @click=" Open">
+        <span></span>
+    </div>
+ </nav>
+</template>
+
+<script>
+import MobileMenu from './MobileMenu.vue';
+
+export default {
+	name: 'NavMenu',
+	components: {
+		MobileMenu,
+	},
+
+	methods: {
+		OpenHamburger() {
+			const value = document.querySelector('.nav__hamburger');
+			value.classList.toggle('nav__hamburger-active');
+		},
+		Open() {
+			const value = document.querySelector('.overlay__menu');
+			const element = document.querySelector('.nav__hamburger');
+
+			value.classList.toggle('-open');
+			element.classList.toggle('nav__hamburger-active');
+		},
+	},
+};
+</script>
+
+<style lang="scss" scoped>
+$background_color_1: transparent;
+
+.nav {
+	background: rgba(250,250,250,0.2);
+	height: 80px;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.5);
+}
+.nav__logo {
+	display: flex;
+		float: left;
+		margin-left: 30px;
+		z-index: 100;
+
+		a {
+			display: flex;
+		z-index: 101;
+			font-size: 28px;
+			line-height: 80px;
+			text-transform: uppercase;
+			color: red;
+			text-decoration: none;
+			letter-spacing: 0.5px;
+		}
+		em {
+			font-style: normal;
+			font-weight: 200;
+		}
+	}
+.nav__hamburger {
+	background: transparent;
+	border: 1px solid red;
+	width: 50px;
+	height: 50px;
+	margin: 15px 39px 0 auto;
+	position: relative;
+	cursor: pointer;
+	//transition: background 0.5s;
+	border-radius: 5px;
+	span {
+		cursor: pointer;
+		border-radius: 1px;
+		height: 2px;
+		width: 35px;
+		background: red;
+		position: absolute;
+		left: 15%;
+		top: 50%;
+		display: block;
+		content: '';
+		transition: all 0.5s ease-in-out;
+		&:before {
+			cursor: pointer;
+			border-radius: 1px;
+			height: 2px;
+			width: 35px;
+			background: red;
+			position: absolute;
+			left: 15%;
+			top: 50%;
+			display: block;
+			content: '';
+			transition: all 0.5s ease-in-out;
+			left: 0;
+			top: -10px;
+		}
+		&:after {
+			cursor: pointer;
+			border-radius: 1px;
+			height: 2px;
+			width: 35px;
+			background: red;
+			position: absolute;
+			left: 15%;
+			top: 50%;
+			display: block;
+			content: '';
+			transition: all 0.5s ease-in-out;
+			left: 0;
+			top: 10px;
+		}
+	}
+}
+.nav__hamburger-active {
+	background: rgba(250,250,250,0.2);
+	span {
+		background-color: $background_color_1;
+		&:before {
+			top: 0;
+			transform: rotate(135deg);
+		}
+		&:after {
+			top: 0;
+			transform: rotate(-135deg);
+		}
+	}
+}
+.nav__hamburger {
+	z-index: 99999;
+}
+
+.nav__logo {
+	z-index: 99999;
+}
+</style>

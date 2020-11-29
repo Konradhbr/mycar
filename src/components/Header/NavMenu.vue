@@ -4,7 +4,7 @@
         <a href="#">Logo</a>
     </div>
 	<div class="nav__menu">
-		<MobileMenu />
+		<Menu />
 	</div>
     <div class="nav__hamburger" @click=" Open">
         <span></span>
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import MobileMenu from './MobileMenu.vue';
+import Menu from './Menu.vue';
 
 export default {
 	name: 'NavMenu',
 	components: {
-		MobileMenu,
+		Menu,
 	},
 
 	methods: {

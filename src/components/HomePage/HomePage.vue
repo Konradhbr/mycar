@@ -1,19 +1,20 @@
 <template>
   <div>
-      <Header />
+      <NavMenu />
 	  <VideoBackground />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header/Header.vue';
 import VideoBackground from './VideoBackground.vue';
+import NavMenu from '../Header/NavMenu.vue';
 
 export default {
 	name: 'HomePage',
 	components: {
-		Header,
+		
 		VideoBackground,
+		NavMenu,
 	},
 
 };

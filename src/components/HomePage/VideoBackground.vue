@@ -1,6 +1,6 @@
 <template>
   <video autoplay muted loop id="Video">
-  <source src="@/assets/videos/video-bg.mp4" type="video/mp4">
+  <source src="@/assets/Videos/video-bg.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </template>
@@ -19,5 +19,19 @@ export default {
   min-width: 100%; 
   min-height: 100%;
   z-index: -1;
+  top: 50% !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%,-50%) !important;
+    -ms-transform: translate(-50%,-50%) !important;
+    transform: translate(-50%,-50%) !important;
+}
+@media screen and (max-width: 1024px) {
+  #Video {
+    //top: 50% !important;
+    left: 69% !important;
+    // -webkit-transform: translate(-50%,-50%) !important;
+    // -ms-transform: translate(-50%,-50%) !important;
+    // transform: translate(-50%,-50%) !important;
+  }
 }
 </style>

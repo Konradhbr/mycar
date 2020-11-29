@@ -17,17 +17,22 @@
                   <li>
                       <a href="#">subpage5</a>
                   </li>
+				  <div class="user" :class="{ 'user-mobile': isMobile, 'user-desktop': isDesktop }"><User /></div>
               </ul>
           <!-- </div> -->
     </nav>
 </template>
 
 <script>
+import User from '../Icons/User.vue';
+
 export default {
+	 components: { User },
 	name: 'MobileMenu',
 	data() {
 		return {
 			isMobile: false,
+			isDesktop: false,
 			
 		};
 	},
@@ -46,9 +51,13 @@ export default {
 			const windowWidth = document.documentElement.clientWidth;
 			if(windowWidth < 1024) {
 				this.isMobile = true
+				this.isDesktop = false
+			
 			}
 			else {
 				this.isMobile = false
+				this.isDesktop = true
+
 			}
 	  },
 	},
@@ -135,6 +144,14 @@ $color_3: rgba(250,250,250,0.5);
 		}
 	}
 }
+.user {
+	 position: absolute;
+ }
+
+ .user-mobile {
+		 top: 80px;
+    left: 26px;
+	 }
 
 @media screen and (min-width: 1024px) {
 $color_1: #777;
@@ -174,6 +191,8 @@ $font_family_1: "Varela Round", sans-serif;
 	height: 80px;
 	list-style: none;
 	li {
+		display: flex;
+    align-items: center;
 		width: 125px;
 		height: 50px;
 		transition: background-position-x 0.9s linear;
@@ -183,10 +202,9 @@ $font_family_1: "Varela Round", sans-serif;
 		text-decoration: none;
 		transition: all 0.45s;
 	}
-}
-& {
+	& {
 	&:hover {
-		//background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+		background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
 		animation: line 1s;
 		a {
 			color: $color_2;
@@ -196,7 +214,13 @@ $font_family_1: "Varela Round", sans-serif;
 		margin-right: 30px;
 	}
 }
+}
+
 
  }
+    .user-desktop {
+		 top: 26px;
+    right: 60px;
+	 }
 }
 </style>

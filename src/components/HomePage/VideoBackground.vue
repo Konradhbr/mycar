@@ -27,11 +27,7 @@ export default {
 }
 @media screen and (max-width: 1024px) {
   #Video {
-    //top: 50% !important;
     left: 69% !important;
-    // -webkit-transform: translate(-50%,-50%) !important;
-    // -ms-transform: translate(-50%,-50%) !important;
-    // transform: translate(-50%,-50%) !important;
   }
 }
 </style>

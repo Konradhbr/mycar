@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <div class="inner__text"> 
-      <h1>lorem ipsum</h1>
+      <h1>Design ipsum</h1>
               <p>lorem ipsum</p>
     </div>              
                 <div class="scroll-icon">
@@ -29,15 +29,18 @@ export default {
   .inner__text {
 
 
-
-    h1 {
-  font-size: 64px;
-  text-transform: uppercase;
-  color: #fff;
-  letter-spacing: 2px;
-  font-weight: 500;
-  text-align: center;
+h1{
+  font-weight: 800;
 }
+//     h1 {
+//   font-size: 64px;
+//   //text-transform: uppercase;
+//   color: #fff;
+//   letter-spacing: 2px;
+//   font-weight: 500;
+//   text-align: center;
+
+// }
 em {
   font-style: normal;
   font-weight: 200;

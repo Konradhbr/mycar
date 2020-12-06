@@ -19,6 +19,7 @@ export default {
   min-width: 100%; 
   min-height: 100%;
   z-index: -1;
+  overflow-x: hidden;
   top: 50% !important;
     left: 50% !important;
     -webkit-transform: translate(-50%,-50%) !important;

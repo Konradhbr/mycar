@@ -81,15 +81,13 @@ $color_3: rgba(250,250,250,0.5);
 	left: 0;
 	top: 0;
 	height: 100%;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
+	//overflow-y: auto;
 	width: 100%;
 	padding: 50px 0;
 	opacity: 0;
 	text-align: center;
 	transform: translateY(-100%);
 	transition: all 0.5s;
-	overflow: scroll;
 	.main__menu {
 		transition: all 0.7s;
 		transition-delay: 0.7s;

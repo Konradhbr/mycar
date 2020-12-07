@@ -3,7 +3,7 @@
       <NavMenu />
 	  <VideoBackground />
 	  <Text />
-	  <News />
+	  	  <News />
 	  <!-- <ModalDepositSuccess /> -->
 	  <!-- <ModalLogin /> -->
 	  <!-- <ModalRecoverPassword />

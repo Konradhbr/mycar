@@ -4,21 +4,46 @@
         <a href="#">Logo</a>
     </div>
 	<div class="nav__menu">
-		<Menu />
+		<Menu @openlogin='modalLogin=true'/>
 	</div>
     <div class="nav__hamburger" @click=" Open">
         <span></span>
     </div>
+	<ModalLogin v-if="modalLogin" @close='CloseModals' @openregister='modalRegister=true' @openrecover='modalRecoverPassword=true' />
+	<ModalRegister v-if="modalRegister" @opensuccess='modalRegisterSuccess=true' @close='CloseModals' />
+	<ModalRegisterSuccess v-if="modalRegisterSuccess" @close='CloseModals' />
+	<ModalRecoverPassword v-if="modalRecoverPassword" @close='CloseModals' />
+
  </nav>
 </template>
 
 <script>
+import ModalLogin from '@/components/Modals/ModalLogin.vue';
+import ModalRegister from '@/components/Modals/ModalRegister.vue';
+import ModalRegisterSuccess from '@/components/Modals/ModalRegisterSuccess.vue';
+import ModalRecoverPassword from '@/components/Modals/ModalRecoverPassword.vue';
+
+
+
 import Menu from './Menu.vue';
+
 
 export default {
 	name: 'NavMenu',
 	components: {
 		Menu,
+		ModalLogin,
+		ModalRegister,
+		ModalRegisterSuccess,
+		ModalRecoverPassword,
+	},
+	data () {
+		return {
+			modalLogin: false,
+			modalRegister: false,
+			modalRegisterSuccess: false,
+			modalRecoverPassword: false,
+		}
 	},
 
 	methods: {
@@ -32,6 +57,13 @@ export default {
 
 			value.classList.toggle('-open');
 			element.classList.toggle('nav__hamburger-active');
+		},
+		CloseModals () {
+			this.modalLogin = false;
+			this.modalRegister = false;
+			this.modalRegisterSuccess = false;
+			this.modalRecoverPassword=false;
+
 		},
 	},
 };

@@ -1,11 +1,11 @@
 <template>
   <modal @close="close">
-    <div class="deposit__info">
-      <span class="decor">Open {{ label }} Smart Deposit</span>
+    <div class="modal__info">
+      <span class="decor">Success</span>
 
-      <div class="deposit__text">
+      <div class="modal__text">
         <div class="success-icon"><IconSuccess /></div>
-        <h2>The operation was successful</h2>
+        <h2>Konto utworzone pomyślnie</h2>
         <p>
           Rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem
           tortor fringilla sed
@@ -20,7 +20,7 @@
 import Modal from '@/components/Modals/Modal.vue';
 
 export default {
-	name: 'ModalDepositSuccess',
+	name: 'ModalRegisterSuccess',
 	components: { Modal },
 	props: {
 		label: {
@@ -37,12 +37,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.deposit__label {
+.modal__label {
   display: flex;
   padding: 60px  40px ;
 }
 
-.deposit__text {
+.modal__text {
   input[type='text'] {
     font-size: 16px;
   }
@@ -63,7 +63,7 @@ export default {
 .success-icon {
   margin-bottom: 20px;
 }
-.deposit__info {
+.modal__info {
   display: flex;
   flex-direction: column;
   padding: 50px ;
@@ -74,7 +74,7 @@ export default {
 }
 
 @media screen and (min-width: 1024px) {
-  .deposit__info {
+  .modal__info {
     display: flex;
     flex-direction: column;
     justify-content: center;

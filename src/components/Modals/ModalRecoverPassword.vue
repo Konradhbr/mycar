@@ -1,9 +1,9 @@
 <template>
   <modal @close="close">
-    <div class="Modal__info">
+    <div class="modal__info">
       <span class="decor">lorem</span>
 
-      <div class="Modal__text">
+      <div class="modal__text">
         <h2>Forgot password</h2>
         
 <form>
@@ -35,12 +35,12 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/Scss/Components/_decor.scss';
-.deposit__label {
+.modal__label {
   display: flex;
   padding: 60px  40px ;
 }
 
-.deposit__text {
+.modal__text {
   input[type='text'] {
     font-size: 16px;
   }
@@ -59,7 +59,7 @@ export default {
   }
 }
 
-.deposit__info {
+.modal__info {
   display: flex;
   flex-direction: column;
   padding: 50px ;
@@ -70,7 +70,7 @@ export default {
 }
 
 @media screen and (min-width: 1024px) {
-  .deposit__info {
+  .modal__info {
     display: flex;
     flex-direction: column;
     justify-content: center;

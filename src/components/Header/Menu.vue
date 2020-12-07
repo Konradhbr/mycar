@@ -3,10 +3,10 @@
           <!-- <div class="main__menu "> -->
               <ul class="menu">
                   <li>
-                      <a href="#">subpage1</a>
+                      <a href="#">Strona startowa</a>
                   </li>
                   <li>
-                      <a href="#">subpage2</a>
+                      <a href="#">News</a>
                   </li>
                   <li>
                       <a href="#">subpage3</a>
@@ -17,7 +17,7 @@
                   <li>
                       <a href="#">subpage5</a>
                   </li>
-				  <div class="user" :class="{ 'user-mobile': isMobile, 'user-desktop': isDesktop }"><User /></div>
+				  <div class="user" :class="{ 'user-mobile': isMobile, 'user-desktop': isDesktop }" @click="$emit('openlogin')"><User /></div>
               </ul>
           <!-- </div> -->
     </nav>

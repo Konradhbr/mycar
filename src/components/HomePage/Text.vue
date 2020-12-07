@@ -5,15 +5,16 @@
               <p>lorem ipsum</p>
     </div>              
                 <div class="scroll-icon">
-                    <a class="scrollTo" data-scrollTo="news" href="#"><img src="@/assets/Images/scroll-icon.png" alt="scroll"></a>
-                </div>    
+                    <button><a href="#"><img src="@/assets/Images/scroll-icon.png" alt="scroll"></a></button>
+                </div> 
+                <!-- <div id="element" style="margin-top: 500px;"> 
+                  <p>asdasd</p></div>    -->
             </div>
 </template>
 
 <script>
 export default {
 	name: 'Text',
-
 }
 </script>
 

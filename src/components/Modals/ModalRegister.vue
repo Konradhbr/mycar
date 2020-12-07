@@ -1,9 +1,9 @@
 <template>
   <modal @close="close">
-    <div class="Modal__info">
+    <div class="modal__info">
       <span class="decor">lorem</span>
 
-      <div class="Modal__text">
+      <div class="modal__text">
         <h2>login</h2>
         
 <form>
@@ -19,12 +19,12 @@
 	<label for="name">Name</label><br /> 
 	<input name="name" type="text" value="" /> <br /> 
 </form>
-<div class="deposit__checkbox">
+<div class="modal__checkbox">
         <Checkbox />
         <span class="req">*</span>
         <p>I have read and accept the terms of the agreement</p>
       </div>
-        <button type="submit" class="button button--full"><span>register</span></button>
+        <button type="submit" class="button button--full" @click="$emit('opensuccess')"><span>register</span></button>
                 <p><span>*</span> - lorem</p>
 
       </div>
@@ -51,12 +51,12 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/Scss/Components/_decor.scss';
-.deposit__label {
+.modal__label {
   display: flex;
   padding: 60px  40px ;
 }
 
-.deposit__text {
+.modal__text {
   input[type='text'] {
     font-size: 16px;
   }
@@ -75,7 +75,7 @@ export default {
   }
 }
 
-.deposit__info {
+.modal__info {
   display: flex;
   flex-direction: column;
   padding: 50px ;
@@ -86,7 +86,7 @@ export default {
 }
 
 @media screen and (min-width: 1024px) {
-  .deposit__info {
+  .modal__info {
     display: flex;
     flex-direction: column;
     justify-content: center;

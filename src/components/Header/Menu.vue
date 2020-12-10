@@ -15,7 +15,7 @@
                       <a href="#">subpage4</a>
                   </li>
                   <li>
-                      <a href="#">subpage5</a>
+                      <a href="#">panel użytkownika</a>
                   </li>
 				  <div class="user" :class="{ 'user-mobile': isMobile, 'user-desktop': isDesktop }" @click="$emit('openlogin')"><User /></div>
               </ul>

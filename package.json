@@ -5,11 +5,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "^8.1.2",
+    "node-sass": "^5.0.0",
+    "postcss-svgo": "^4.0.2",
     "vue": "^3.0.3",
+    "vue-router": "^4.0.1",
     "vue-scroll-to": "^2.2.1",
     "vue-scrollto": "^2.20.0",
     "vuex": "^4.0.0-0"
@@ -31,6 +37,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0-0",
+    "nodemon": "^2.0.6",
     "prettier": "^2.2.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2"

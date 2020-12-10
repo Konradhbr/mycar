@@ -5,21 +5,50 @@
 
       <div class="modal__text">
         <h2>login</h2>
-        
-<form>
-	<label for="name">Name</label><br /> 
-	<input name="name" type="text" value="" /> <br /> 
-</form>
+        <div v-if="error" class="alert alert-danger">{{ error }}</div>
 
-<form>
-	<label for="name">Name</label><br /> 
-	<input name="name" type="text" value="" /> <br /> 
-</form>
-<span>Forgot password <a href="#" @click="$emit('openrecover')">Recover password</a></span>
-        <button type="submit" class="button button--full"><span>login</span></button>
-        <p>or</p>
-                <button type="submit" class="button button--full" @click="$emit('openregister')"><span>create account</span></button>
+        <form>
+          <label for="email">Email</label><br />
+          <input
+            id="email"
+            type="email"
+            class="form-control"
+            name="email"
+            value
+            required
+            autofocus
+            v-model="form.email"
+          />
+          <br />
 
+          <label for="password">Password</label><br />
+          <input
+            id="password"
+            type="password"
+            class="form-control"
+            name="password"
+            required
+            v-model="form.password"
+          />
+          <br />
+          <span
+            >Forgot password
+            <a href="#" @click="$emit('openrecover')"
+              >Recover password</a
+            ></span
+          >
+          <button type="submit" class="button button--full">
+            <span>login</span>
+          </button>
+          <p>or</p>
+          <button
+            type="submit"
+            class="button button--full"
+            @click="$emit('openregister')"
+          >
+            <span>create account</span>
+          </button>
+        </form>
       </div>
     </div>
   </modal>
@@ -27,10 +56,20 @@
 
 <script>
 import Modal from '@/components/Modals/Modal.vue';
+import firebase from 'firebase';
 
 export default {
 	name: 'ModalDepositSuccess',
 	components: { Modal },
+	data() {
+		return {
+			form: {
+				email: '',
+				password: '',
+			},
+			error: null,
+		};
+	},
 	props: {
 		label: {
 			type: String,
@@ -41,6 +80,21 @@ export default {
 		close() {
 			this.$emit('close', true);
 		},
+		submit() {
+			firebase
+				.auth()
+				.signInWithEmailAndPassword(
+					this.form.email,
+					this.form.password,
+				)
+				// eslint-disable-next-line no-unused-vars
+				.then((data) => {
+					this.$router.replace({ name: 'Dashboard' });
+				})
+				.catch((err) => {
+					this.error = err.message;
+				});
+		},
 	},
 };
 </script>
@@ -49,7 +103,7 @@ export default {
 @import '@/assets/Scss/Components/_decor.scss';
 .modal__label {
   display: flex;
-  padding: 60px  40px ;
+  padding: 60px 40px;
 }
 
 .modal__text {
@@ -66,15 +120,14 @@ export default {
   margin-bottom: 40px;
 
   p {
-    color: black
-    ;
+    color: black;
   }
 }
 
 .modal__info {
   display: flex;
   flex-direction: column;
-  padding: 50px ;
+  padding: 50px;
 
   h2 {
     margin: 0 0 20px 0;

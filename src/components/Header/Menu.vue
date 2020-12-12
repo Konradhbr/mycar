@@ -12,7 +12,7 @@
                       <a href="#">subpage3</a>
                   </li>
                   <li>
-                      <a href="#">subpage4</a>
+                      <a href="#">kalkulatory</a>
                   </li>
                   <li>
                       <a href="#">panel użytkownika</a>
@@ -69,19 +69,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color_1: blue;
-$color_2 :orange;
-$color_3: rgba(250,250,250,0.5);
-
 .overlay__menu {
 	background: rgba(0, 0, 0, 0.95);
-	color: $color_1;
+	color: white;
 	position: fixed;
 	z-index: 100;
 	left: 0;
 	top: 0;
 	height: 100%;
-	//overflow-y: auto;
 	width: 100%;
 	padding: 50px 0;
 	opacity: 0;
@@ -109,11 +104,11 @@ $color_3: rgba(250,250,250,0.5);
 			a {
 				font-size: 24px;
 				font-weight: 300;
-				color: $color_2;
+				color: red;
 				text-decoration: none;
 				transition: all 0.5s;
 				&:hover {
-					color: $color_3;
+					color:red;
 				}
 			}
 		}
@@ -122,7 +117,7 @@ $color_3: rgba(250,250,250,0.5);
 		margin-top: 60px;
 		font-size: 13px;
 		text-transform: uppercase;
-		color: $color_2;
+		color: red;
 		font-weight: 200;
 		letter-spacing: 0.5px;
 		text-align: center;
@@ -152,10 +147,6 @@ $color_3: rgba(250,250,250,0.5);
 	 }
 
 @media screen and (min-width: 1024px) {
-$color_1: #777;
-$color_2: #d94f5c;
-$font_family_1: "Varela Round", sans-serif;
-
 @keyframes line {
   0% {
     background-position-x: 390px;
@@ -196,7 +187,7 @@ $font_family_1: "Varela Round", sans-serif;
 		transition: background-position-x 0.9s linear;
 		text-align: center;
 		a { font-size: 22px;
-		color: $color_1;
+		color: white;
 		text-decoration: none;
 		transition: all 0.45s;
 	}
@@ -205,7 +196,7 @@ $font_family_1: "Varela Round", sans-serif;
 		background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
 		animation: line 1s;
 		a {
-			color: $color_2;
+			color: red;
 		}
 	}
 	&:not(:last-child) {

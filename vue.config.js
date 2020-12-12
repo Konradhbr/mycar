@@ -1,0 +1,15 @@
+module.exports = {
+	css: {
+		loaderOptions: {
+			scss: {
+				prependData: `
+          @import '@/assets/scss/settings/_base.scss';
+          @import '@/assets/scss/settings/_grid.scss';
+          @import '@/assets/scss/settings/_fonts.scss';
+          @import '@/assets/scss/components/_button.scss';
+          @import '@/assets/scss/components/_decor.scss';
+          `
+			},
+		},
+	},
+};

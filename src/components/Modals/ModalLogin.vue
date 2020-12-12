@@ -100,7 +100,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/Scss/Components/_decor.scss';
 .modal__label {
   display: flex;
   padding: 60px 40px;

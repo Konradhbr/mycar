@@ -1,7 +1,7 @@
 <template>
  <nav class="nav">
 	<div class="nav__logo">
-        <a href="#">Logo</a>
+        <a href="#"><img src="@/assets/Images/logo.png" alt=""></a>
     </div>
 	<div class="nav__menu">
 		<Menu @openlogin='modalLogin=true'/>
@@ -101,6 +101,9 @@ $background_color_1: transparent;
 			font-style: normal;
 			font-weight: 200;
 		}
+    img {
+      height: 80px;
+    }
 	}
 .nav__hamburger {
 	background: transparent;

@@ -3,10 +3,10 @@ import {createApp} from 'vue';
 import firebase from 'firebase/app';
 // import router from "./Routes/index";
 import Router from 'vue-router';
-
 import App from './App.vue';
 import store from './store/store';
-import './assets/scss/settings/_base.scss'
+
+
 
 // Vue.config.productionTip = false;
 
